@@ -1,14 +1,14 @@
 package checkout;
 
 public class Checkout {
-    private int itemCount;
-    private int itemPrice;
-    private int totalPrice;
+    private double itemCount;
+    private double itemPrice;
+    private double totalPrice;
 
-    public void add(Integer itemCount, int itemPrice) {
+    public void add(Integer itemCount, double itemPrice) {
         totalPrice += itemPrice * itemCount;
     }
-    public long total() {
+    public double total() {
         return totalPrice;
     }
 }
