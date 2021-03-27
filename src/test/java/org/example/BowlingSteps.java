@@ -13,8 +13,8 @@ public class BowlingSteps {
     public BowlingSteps() {
         scorer = new BowlingScorer();
     }
-    @Given("I have not thrown any bowl yet")
-    public void i_have_not_thrown_any_bowl_yet() {
+    @Given("I have not thrown any ball yet")
+    public void i_have_not_thrown_any_ball_yet() {
     }
     @Then("my score is {int}")
     public void my_score_is(int score) {
