@@ -32,5 +32,22 @@ public class WithdrawSteps {
     public void the_balance_of_my_account_should_be(Integer balance) {
         assertEquals(balance, myAccount.balance());
     }
-
+    @When("j'ai {int} sur mon compte")
+    public void j_ai_sur_mon_compte(Integer solde) {
+        myAccount.setBalance(solde);
+    }
+    @When("je choisis de retirer un montant fixe de {int}")
+    public void je_choisis_de_retirer_un_montant_fixe_de(Integer retrait) {
+        myAccount.withdrawFixedAmount(retrait);
+    }
+    @Then("je devrais recevoir {int}")
+    public void je_devrais_recevoir(Integer liquide) {
+    }
+    @Then("le solde de mon compte devrait être {int}")
+    public void le_solde_de_mon_compte_devrait_être(Integer solde) {
+        assertEquals(solde, myAccount.balance());
+    }
+    @Then("je devrais voir un message d'erreur")
+    public void je_devrais_voir_un_message_d_erreur() {
+    }
 }
