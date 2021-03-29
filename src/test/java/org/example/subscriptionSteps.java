@@ -4,12 +4,13 @@ package org.example;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import cucumber.api.Format;
+
 import java.util.Date;
 
 public class subscriptionSteps {
     @Given("^That I subscribed on the date (.+)$")
-    public void that_I_subscribed_on_the_date(@Format("yyyy-MM-dd") Date subscriptionDate) {
+    // public void that_I_subscribed_on_the_date(@Format("yyyy-MM-dd") Date dateSubscription) {
+    public void that_I_subscribed_on_the_date(String dateSubscription) {
     }
     @When("Comes the {int}-{int}-{int}")
     public void comes_the(int year, int month, int day) {
