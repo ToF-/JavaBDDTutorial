@@ -1,5 +1,6 @@
 package org.example;
 
+import LAGS.SalesStats;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -26,6 +27,6 @@ public class SalesStatsSteps {
     }
     @Then("I get the following stats")
     public void i_get_the_following_stats(io.cucumber.datatable.DataTable expectedTable) {
-        exepectedTable.diff(DataTable.create(stats));
+        expectedTable.diff(DataTable.create(stats));
     }
 }
