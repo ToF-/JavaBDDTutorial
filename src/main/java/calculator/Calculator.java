@@ -1,7 +1,4 @@
 package calculator;
-
-import checkout.Checkout;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +6,6 @@ public class Calculator {
 
     private Integer result;
     private List<Integer> stack;
-
 
     public Calculator() {
         result = 0;
