@@ -12,7 +12,6 @@ import java.util.List;
 
 public class DatabaseSteps {
     private Connection connection;
-    private Statement statement;
     private ResultSet resultSet;
 
     @Given("^I am connected with the database$")
@@ -26,9 +25,16 @@ public class DatabaseSteps {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
         }
     }
-    @When("I run the select query")
-    public void i_run_the_select_query() throws SQLException {
-        statement = connection.createStatement();
+    @When("I search an order with id {string}")
+    public void i_search_an_order_with_id(String id) throws SQLException {
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM ORDERS WHERE ID = ?");
+        preparedStatement.setString(1, id);
+        resultSet = preparedStatement.executeQuery();
+    }
+
+    @When("I search for all orders")
+    public void i_search_for_all_orders() throws SQLException {
+        Statement statement = connection.createStatement();
         resultSet = statement.executeQuery("SELECT * FROM ORDERS ORDER BY ID");
     }
     @Then("I should see the result")
