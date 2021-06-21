@@ -18,6 +18,7 @@ public class Calculator {
 
     public void enter(Integer number) {
         this.stack.add(number);
+        this.result = number;
     }
 
     public void operation(String string) {
